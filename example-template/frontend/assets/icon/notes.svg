@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
-  <!-- Иконка «Заметки»: лист с загнутым углом. -->
-  <path d="M5 3.5 H14 L19 8.5 V20.5 H5 Z" stroke="#4AA14C" stroke-width="1.6" stroke-linejoin="round"/>
-  <path d="M14 3.5 V8.5 H19" stroke="#4AA14C" stroke-width="1.6" stroke-linejoin="round"/>
-  <path d="M8.5 12.5 H15.5 M8.5 16 H15.5" stroke="#4AA14C" stroke-width="1.6" stroke-linecap="round"/>
-</svg>
