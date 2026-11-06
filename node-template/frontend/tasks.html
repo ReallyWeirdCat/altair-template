@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Задачи — Altair</title>
+
+  <!-- Фавиконка — маленькая иконка на вкладке браузера. -->
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+
+  <!-- main.css сам подключает colors.css с цветами проекта. -->
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <!-- defer означает: скачать скрипты сразу, но выполнить после разбора HTML.
+       Скрипты с defer выполняются в том же порядке, в котором подключены. -->
+  <script src="assets/js/api.js" defer></script>
+  <script src="assets/js/header.js" defer></script>
+  <script src="assets/js/tasks.js" defer></script>
+</head>
+<body>
+  <!-- Шапка одинаковая на всех страницах. Страница задач отмечает свою вкладку. -->
+  <header class="header">
+    <div class="header__inner">
+      <a class="brand" href="tasks.html" aria-label="Altair — задачи">
+        <img class="brand__logo" src="assets/img/logo.svg" alt="">
+        <span class="brand__name">Altair</span>
+      </a>
+
+      <nav class="tabs" aria-label="Разделы">
+        <a class="tab is-active" href="tasks.html" aria-current="page">
+          <img src="assets/icon/tasks.svg" alt="">
+          Задачи
+        </a>
+        <a class="tab" href="notes.html">
+          <img src="assets/icon/notes.svg" alt="">
+          Заметки
+        </a>
+        <a class="tab" href="reports.html">
+          <img src="assets/icon/reports.svg" alt="">
+          Отчёты
+        </a>
+      </nav>
+
+      <button class="counter" id="click-counter" type="button">
+        Нажатий: <span class="counter__value" id="click-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="page__head">
+      <img class="page__icon" src="assets/icon/tasks.svg" alt="">
+      <h1 class="page__title">Задачи</h1>
+    </div>
+
+    <div class="layout">
+      <section class="panel" aria-labelledby="task-form-title">
+        <h2 class="panel__title" id="task-form-title">Задача</h2>
+
+        <!-- Форма используется и для добавления, и для редактирования.
+             В каком режиме она находится, решает tasks.js. -->
+        <form class="form" id="task-form">
+          <label class="field">
+            <span class="field__label">Текст</span>
+            <input class="input" id="task-text" type="text" name="text" required>
+          </label>
+
+          <label class="field">
+            <span class="field__label">Время</span>
+            <input class="input" id="task-time" type="datetime-local" name="time" required>
+          </label>
+
+          <label class="checkbox">
+            <input id="task-done" type="checkbox" name="done">
+            Выполнено
+          </label>
+
+          <div class="form__actions">
+            <button class="button button--primary" id="task-submit" type="submit">Добавить</button>
+            <button class="button button--secondary" id="task-cancel" type="button" hidden>Отмена</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="task-list-title">
+        <h2 class="panel__title" id="task-list-title">Список</h2>
+
+        <!-- Пустое состояние показывается, когда в базе нет задач. -->
+        <p class="empty" id="task-empty">Пусто</p>
+
+        <!-- Элементы списка создаёт tasks.js из данных сервера. -->
+        <ul class="list" id="task-list"></ul>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
