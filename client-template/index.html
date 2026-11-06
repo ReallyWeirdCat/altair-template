@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Altair — главная</title>
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/todo-storage.js" defer></script>
+  <script src="assets/js/dashboard.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a class="brand" href="index.html">Altair</a>
+
+      <nav class="nav" aria-label="Разделы">
+        <a class="nav__link is-active" href="index.html" aria-current="page">Главная</a>
+        <a class="nav__link" href="clicker.html">Счётчик</a>
+        <a class="nav__link" href="todo.html">Задачи</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <h1 class="page__title">Главная</h1>
+
+    <div class="summary-grid">
+      <section class="summary" aria-labelledby="unfinished-title">
+        <h2 class="summary__label" id="unfinished-title">Невыполненные задачи</h2>
+        <p class="summary__value" id="unfinished-count">0</p>
+        <a class="summary__link" href="todo.html">Открыть задачи</a>
+      </section>
+
+      <section class="summary" aria-labelledby="clicks-title">
+        <h2 class="summary__label" id="clicks-title">Нажатия</h2>
+        <p class="summary__value" id="clicks-count">0</p>
+        <a class="summary__link" href="clicker.html">Открыть счётчик</a>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

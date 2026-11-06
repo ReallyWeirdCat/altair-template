@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Altair — задачи</title>
+
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script src="assets/js/todo-storage.js" defer></script>
+  <script src="assets/js/todo.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a class="brand" href="index.html">Altair</a>
+
+      <nav class="nav" aria-label="Разделы">
+        <a class="nav__link" href="index.html">Главная</a>
+        <a class="nav__link" href="clicker.html">Счётчик</a>
+        <a class="nav__link is-active" href="todo.html" aria-current="page">Задачи</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <h1 class="page__title">Задачи</h1>
+
+    <form class="todo-form" id="todo-form">
+      <label class="visually-hidden" for="todo-input">Новая задача</label>
+      <input
+        class="todo-input"
+        id="todo-input"
+        type="text"
+        placeholder="Новая задача"
+        autocomplete="off"
+        required
+      >
+      <button class="button" type="submit">Добавить</button>
+    </form>
+
+    <p class="empty" id="todo-empty">Задач пока нет.</p>
+    <ul class="todo-list" id="todo-list"></ul>
+  </main>
+</body>
+</html>
