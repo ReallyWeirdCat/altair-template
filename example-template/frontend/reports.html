@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отчёты — Altair</title>
+
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <script src="assets/js/api.js" defer></script>
+  <script src="assets/js/header.js" defer></script>
+  <script src="assets/js/reports.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a class="brand" href="tasks.html" aria-label="Altair — задачи">
+        <img class="brand__logo" src="assets/img/logo.svg" alt="">
+        <span class="brand__name">Altair</span>
+      </a>
+
+      <nav class="tabs" aria-label="Разделы">
+        <a class="tab" href="tasks.html">
+          <img src="assets/icon/tasks.svg" alt="">
+          Задачи
+        </a>
+        <a class="tab" href="notes.html">
+          <img src="assets/icon/notes.svg" alt="">
+          Заметки
+        </a>
+        <a class="tab is-active" href="reports.html" aria-current="page">
+          <img src="assets/icon/reports.svg" alt="">
+          Отчёты
+        </a>
+      </nav>
+
+      <button class="counter" id="click-counter" type="button">
+        Нажатий: <span class="counter__value" id="click-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="page__head">
+      <img class="page__icon" src="assets/icon/reports.svg" alt="">
+      <h1 class="page__title">Отчёты</h1>
+    </div>
+
+    <div class="layout">
+      <section class="panel" aria-labelledby="report-form-title">
+        <h2 class="panel__title" id="report-form-title">Отчёт</h2>
+
+        <form class="form" id="report-form">
+          <label class="field">
+            <span class="field__label">Время</span>
+            <input class="input" id="report-time" type="datetime-local" name="time" required>
+          </label>
+
+          <label class="field">
+            <span class="field__label">Настроение</span>
+            <select class="select" id="report-mood" name="mood" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3" selected>3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </label>
+
+          <div class="form__actions">
+            <button class="button button--primary" id="report-submit" type="submit">Добавить</button>
+            <button class="button button--secondary" id="report-cancel" type="button" hidden>Отмена</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="report-list-title">
+        <h2 class="panel__title" id="report-list-title">Список</h2>
+
+        <p class="empty" id="report-empty">Пусто</p>
+        <ul class="list" id="report-list"></ul>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
